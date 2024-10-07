@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+BlogBuzz
+{% endblock %}
+
+
+{% block body %}
+
+{% for i in  queryset %}
+<a href=" {% url "Each_blog" i.id %} " class = "text-decoration-none">
+<div class="mx-3 my-2 alert  alert-warning">
+    {{i.title}} <br>
+</div>
+</a>
+{% endfor %}
+
+
+
+{% endblock %}

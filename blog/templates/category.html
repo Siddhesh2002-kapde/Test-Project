@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+BlogBuzz
+{% endblock  %}
+
+
+{% block body %}
+
+{% comment %} {% load static %} {% endcomment %}
+{% load static %}
+  <div class="container">
+    <div class="row justify-content-start">
+      {% for i in category %}
+      <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-3">
+      <div class="card text-bg-dark" style="max-width: 18rem;">
+        <a href="{% url "blogs" i.id %}" class = "text-white text-center">
+          <img src="/media/{{ i.Cat_image }}" class="card-img" alt="{{ i.category }}">
+      
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{ i.category }}</h5>
+          </div>
+        </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+
+
+      
+      
+{% endblock  %}
+      
+      
+      {% comment %} <img src="media/{{i.Cat_image}}" alt=""> {% endcomment %}
+{% comment %} <img src="media/{{i.image}}" alt=""> {% endcomment %}
